@@ -1,11 +1,11 @@
 pipeline {
     agent {
-        docker { image 'node:16.13.1-alpine' }
+        docker { image 'jenkins/jenkins:lts' }
     }
     stages {
         stage('Test') {
             steps {
-                sh 'node --version'
+                sh 'ls'
             }
         }
     }
