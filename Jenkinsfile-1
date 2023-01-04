@@ -19,9 +19,21 @@ pipeline {
             }
         }
         post {
+            always {
+                echo 'One way or another, I have finished'
+                deleteDir() /* clean up our workspace */
+            }
             success {
-                echo 'This build is completed'
-                //slackSend "Build deployed successfully - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
+                echo 'I succeeded!'
+            }
+            unstable {
+                echo 'I am unstable :/'
+            }
+            failure {
+                echo 'I failed :('
+            }
+            changed {
+                echo 'Things were different before...'
             }
         }
     }
