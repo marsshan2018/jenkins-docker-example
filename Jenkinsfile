@@ -1,10 +1,14 @@
 pipeline {
     agent {
-        docker { image 'jenkins/jenkins:lts' }
+        node {
+            label 'docker-agent' 
+        }
     }
+}
     stages {
         stage('Test') {
             steps {
+                echo "Testing.."
                 sh 'ls'
             }
         }
