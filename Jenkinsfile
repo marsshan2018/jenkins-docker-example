@@ -4,7 +4,6 @@ pipeline {
             label 'docker-agent' 
         }
     }
-}
     stages {
         stage('Test') {
             steps {
