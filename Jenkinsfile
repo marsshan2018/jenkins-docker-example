@@ -11,5 +11,10 @@ pipeline {
                 sh 'ls'
             }
         }
+        stage('Post Compile') {
+            steps {
+                echo "Compile completed.."
+            }
+        }
     }
 }
