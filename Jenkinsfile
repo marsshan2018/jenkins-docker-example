@@ -1,7 +1,7 @@
 pipeline {
     agent {
         node {
-            label 'dockeragent' 
+            label 'agent' 
         }
     }
     stages {
@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Post Compile') {
             steps {
-                echo "Compile completed.."
+                echo "Compile completed..Get a coffee!"
             }
         }
     }
